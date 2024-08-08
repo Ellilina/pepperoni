@@ -67,20 +67,38 @@ font-style: italic;
     list-style-type: none;
     list-style-position: inside;
     counter-reset: number;
+    display: grid;
+    gap: 50px;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .cooking__step::before {
     content: 'Шаг ' counter(number);
     counter-increment: number;
     font-weight: bold;
+    position: absolute;
+    top: 20px;
+    padding: 0 10px;
+    background-color: rgb(239, 239, 239);
 }
 
 .cooking-step__description {
-    font-size: 1em;
+    font-size: 0.75em;
     display: inline-block;
-    margin-right: 20px;
-    max-width: calc(100% - 560px);
-    vertical-align: top;
+    width: 100%;
+    padding: 0.75em;
+    text-align: justify;
+   
+}
+
+.cooking-step {
+    display: flex;
+    flex-direction: column-reverse;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid black;
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.1);
 }
 
 .container {
@@ -94,9 +112,7 @@ font-style: italic;
 }
 
 .cooking-step__img {
-    max-width: 400px;
-    float: right;
-    vertical-align: middle;
+    width: 100%;
 }
 
 .cooking__note {
