@@ -2,17 +2,24 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    max-width: 100vw;
 }
 
 .header-baner {
     background-image: url("images/bg.jpg");
     background-size: cover;
     background-position: center 70%;
-    text-align: center;
+    display: grid;
+    place-items: center;
+}
+
+
+.header-baner h1 {
     font-size: 8em;
     line-height: 500px;
     color: darksalmon;
     text-shadow: 5px 5px 10px black;
+    text-align: center;
 }
 
 h2 {
@@ -69,7 +76,7 @@ font-style: italic;
     counter-reset: number;
     display: grid;
     gap: 50px;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .cooking__step::before {
@@ -118,3 +125,70 @@ font-style: italic;
 .cooking__note {
     clear: both;
 }
+
+@media screen and (max-width: 960px) {
+    * {
+       max-width: 100vw;
+    }
+    
+    .header-baner {
+        width: 100vw;
+        height: 50vh;
+    }
+
+    .header-baner h1 {
+        font-size: 4em;
+        line-height: 150%;
+    }
+    
+    .cooking__process {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: 5%;
+    }
+
+    h2 {
+        font-size: 2.2em;
+        margin-top: 0.2em;
+        margin-bottom: 0.2em;
+    }
+    
+    h3 {
+        font-size: 1.8em;
+        margin-top: 0.2em;
+        margin-bottom: 0.2em;
+    }
+    
+    p, dl, ol, ul {
+        font-size: 1.5em;
+    }
+    
+    .cooking__process {
+        grid-template-columns: 1fr;
+   }
+  
+
+}
+
+@media screen and (max-width: 480px) {
+    .cooking__process {
+         grid-template-columns: 1fr;
+    }
+   
+}
+
+@media (min-width: 1200px) {
+
+    .ingredients {
+       display: grid; 
+       grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .ingredients__header {
+        grid-column: 1 / 4;
+    }
+
+}
+
